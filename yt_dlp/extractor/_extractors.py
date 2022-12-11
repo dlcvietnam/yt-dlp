@@ -84,6 +84,7 @@ from .agora import (
     WyborczaVideoIE,
 )
 from .airmozilla import AirMozillaIE
+from .airtv import AirTVIE
 from .aljazeera import AlJazeeraIE
 from .alphaporno import AlphaPornoIE
 from .amara import AmaraIE
@@ -542,7 +543,7 @@ from .espn import (
     ESPNCricInfoIE,
 )
 from .esri import EsriVideoIE
-from .europa import EuropaIE
+from .europa import EuropaIE, EuroParlWebstreamIE
 from .europeantour import EuropeanTourIE
 from .eurosport import EurosportIE
 from .euscreen import EUScreenIE
@@ -1287,6 +1288,7 @@ from .on24 import On24IE
 from .ondemandkorea import OnDemandKoreaIE
 from .onefootball import OneFootballIE
 from .onenewsnz import OneNewsNZIE
+from .oneplace import OnePlacePodcastIE
 from .onet import (
     OnetIE,
     OnetChannelIE,
