@@ -43,7 +43,7 @@ class EbayItemIE(InfoExtractor):
         #print(initial_state)
         #print(type(initial_state))
         thumb = []
-        videoURL = 'http://bo.vutn.net/no-video.mp4'
+        videoURL = ''
         newjson = json.loads(json.dumps(initial_state))
         for i in range(len(newjson['mediaList'])):
             for key, value in newjson['mediaList'][i].items():
@@ -58,12 +58,22 @@ class EbayItemIE(InfoExtractor):
                 'Không thể lấy video/ảnh, vui lòng kiểm tra lại liên kết hoặc liên hệ hỗ trợ',
                 expected=True)
         title = self._search_regex(r'<title>([^<]+)<', webpage, 'title')
-        formats = self._extract_m3u8_formats(
-            videoURL, pid, 'mp4')
-        return {
+        if videoURL is None:
+            videoURL = "http://bo.vutn.net/no-video.mp4"
+            return {
             # I have no idea what these params mean but it at least seems to work
-            'formats': formats,
+            'url': videoURL,
             'id': pid,
             'title': title,
             'thumbnails': thumb,
-        }
+            }
+        else:
+            formats = self._extract_m3u8_formats(
+                videoURL, pid, 'mp4')
+            return {
+                # I have no idea what these params mean but it at least seems to work
+                'formats': formats,
+                'id': pid,
+                'title': title,
+                'thumbnails': thumb,
+            }
