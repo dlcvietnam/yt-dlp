@@ -51,7 +51,7 @@ class EbayItemIE(InfoExtractor):
                     videoURL = value["playlistMap"]["HLS"]
                 if key in "image":
                     thumb.append({
-                        'url': value["originalImg"]["URL"],
+                        'url': value["originalImg"]["URL"].replace("l500","l2000"),
                     })
         if not pid:
             raise ExtractorError(
