@@ -6,6 +6,10 @@ from .taobao import (
     Ali1688IE,
 )
 
+from .ebay import (
+    EbayItemIE,
+)
+
 from .youtube import (  # Youtube is moved to the top to improve performance
     YoutubeIE,
     YoutubeClipIE,
