@@ -1,8 +1,6 @@
 # coding: utf-8
 from .common import InfoExtractor
 import json
-import re
-import ast
 from ..utils import (
     # int_or_none,
     # js_to_json,
@@ -40,8 +38,8 @@ class EbayItemIE(InfoExtractor):
                 'Lỗi đăng nhập Taobao - Cookies Error - Vui lòng báo lỗi cho hỗ trợ @cpanel10x',
                 expected=True)
         initial_state = self._search_json(r'\[\[\"PICTURE0\-0\"\,0\,\{\"model\"\:', webpage, 'initial state', pid)
-        #print(initial_state)
-        #print(type(initial_state))
+        # print(initial_state)
+        # print(type(initial_state))
         thumb = []
         videoURL = None
         newjson = json.loads(json.dumps(initial_state))
@@ -51,7 +49,7 @@ class EbayItemIE(InfoExtractor):
                     videoURL = value["playlistMap"]["HLS"]
                 if key in "image":
                     thumb.append({
-                        'url': value["originalImg"]["URL"].replace("l500","l2000"),
+                        'url': value["originalImg"]["URL"].replace("l500", "l2000"),
                     })
         if not pid:
             raise ExtractorError(
@@ -61,10 +59,10 @@ class EbayItemIE(InfoExtractor):
         if videoURL is None:
             return {
             # I have no idea what these params mean but it at least seems to work
-            'url': "http://bo.vutn.net/no-video.mp4",
-            'id': pid,
-            'title': title,
-            'thumbnails': thumb,
+                'url': "http://bo.vutn.net/no-video.mp4",
+                'id': pid,
+                'title': title,
+                'thumbnails': thumb,
             }
         else:
             formats = self._extract_m3u8_formats(
