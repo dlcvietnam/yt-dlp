@@ -58,7 +58,7 @@ class EbayItemIE(InfoExtractor):
         title = self._search_regex(r'<title>([^<]+)<', webpage, 'title')
         if videoURL is None:
             return {
-            # I have no idea what these params mean but it at least seems to work
+                # I have no idea what these params mean but it at least seems to work
                 'url': "http://bo.vutn.net/no-video.mp4",
                 'id': pid,
                 'title': title,
