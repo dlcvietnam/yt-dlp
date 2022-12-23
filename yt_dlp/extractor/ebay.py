@@ -12,8 +12,6 @@ from ..utils import (
 class EbayItemIE(InfoExtractor):
     IE_NAME = 'ebay:product'
     _VALID_URL = r'https?://(?:www\.)?ebay\.(?:[a-z]{2,3})(?:\.[a-z]{2})?/(?:itm)(?:[/\S])*/(?P<id>[0-9]{9,12})'
-
-    _LOGIN_URL = 'https://login.taobao.com/member/login.jhtml'
     _TESTS = [{
         'url': 'https://www.ebay.com/itm/adidas-Originals-Ultraboost-DNA-XXII-Shoes-Men-039-s-/155249878436?&_trksid=p2056016.m2516.l5255',
         'info_dict': {

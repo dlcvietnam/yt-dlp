@@ -97,7 +97,10 @@ from .alura import (
     AluraCourseIE
 )
 from .amcnetworks import AMCNetworksIE
-from .amazon import AmazonStoreIE
+from .amazon import (
+    AmazonStoreIE,
+    AmazonReviewsIE,
+)
 from .amazonminitv import (
     AmazonMiniTVIE,
     AmazonMiniTVSeasonIE,
