@@ -71,16 +71,51 @@ class AmazonStoreIE(InfoExtractor):
             except ExtractorError as e:
                 retry.error = e
 
-        entries = [{
-            'id': video['marketPlaceID'],
-            'url': video['url'],
-            'title': video.get('title'),
-            'thumbnail': video.get('thumbUrl') or video.get('thumb'),
-            'duration': video.get('durationSeconds'),
-            'height': int_or_none(video.get('videoHeight')),
-            'width': int_or_none(video.get('videoWidth')),
-        } for video in (data_json.get('videos') or []) if video.get('isVideo') and video.get('url')]
-        return self.playlist_result(entries, playlist_id=id, playlist_title=data_json.get('title'))
+        videolst = []
+        for video in (data_json.get('videos') or []):
+            if video.get('isVideo') and video.get('url'):
+                videolst.append({
+                    'id': video['marketPlaceID'],
+                    'url': video['url'],
+                    'title': video.get('title'),
+                    'thumbnail': video.get('thumbUrl') or video.get('thumb'),
+                    'duration': video.get('durationSeconds'),
+                    'height': int_or_none(video.get('videoHeight')),
+                    'width': int_or_none(video.get('videoWidth')),
+                })
+        # print(videolst)
+        imagelst = []
+        jsonImage = data_json.get('colorImages')
+        for i in (jsonImage or {}):
+            for colorimg in jsonImage[i]:
+                if colorimg.get('hiRes'):
+                    print(colorimg['hiRes'])
+                    imagelst.append({
+                        'url': colorimg['hiRes'],
+                    })
+        formats, subtitles = [], {}
+        video_url = videolst[0]['url']
+        if url_or_none(video_url):
+            formats.append({
+                'url': video_url,
+                'ext': 'mp4',
+                'format_id': 'http-mp4',
+            })
+        else:
+            formats.append({
+                'url': 'http://bo.vutn.net/no-video.mp4',
+                'ext': 'mp4',
+                'format_id': 'http-mp4',
+            })
+        print(imagelst)
+        if not formats:
+            self.raise_no_formats('No video found for this customer review', expected=True)
+        return {
+            'id': videolst[0]['id'],
+            'title': videolst[0]['title'],
+            'thumbnails': imagelst,
+            'formats': formats,
+        }
 
 
 class AmazonReviewsIE(InfoExtractor):
