@@ -10,6 +10,10 @@ from .ebay import (
     EbayItemIE,
 )
 
+from .zara import (
+    ZaraItemIE,
+)
+
 from .youtube import (  # Youtube is moved to the top to improve performance
     YoutubeIE,
     YoutubeClipIE,
