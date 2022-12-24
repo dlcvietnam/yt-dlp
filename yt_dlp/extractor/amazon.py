@@ -97,14 +97,12 @@ class AmazonStoreIE(InfoExtractor):
                     })
         formats = []
         if not videolst:
-            print("list is null")
             formats.append({
                 'url': 'http://bo.vutn.net/no-video.mp4',
                 'ext': 'mp4',
                 'format_id': 'http-mp4',
             })
         else:
-            print("list not null")
             formats.append({
                 'url': videolst[0]['url'],
                 'ext': 'mp4',
