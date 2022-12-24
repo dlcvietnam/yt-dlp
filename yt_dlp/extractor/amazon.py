@@ -107,9 +107,7 @@ class AmazonStoreIE(InfoExtractor):
                 'url': videolst[0]['url'],
                 'ext': 'mp4',
                 'format_id': 'http-mp4',
-            })
-
-            
+            }) 
         # print(imagelst)
         if not formats:
             self.raise_no_formats('No video found for this customer review', expected=True)
