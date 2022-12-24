@@ -70,10 +70,12 @@ class AmazonStoreIE(InfoExtractor):
                     transform_source=js_to_json)
             except ExtractorError as e:
                 retry.error = e
-
+        title = data_json.get('title') or ""
+        vid = data_json.get('mediaAsin') or ""
         videolst = []
         for video in (data_json.get('videos') or []):
             if video.get('isVideo') and video.get('url'):
+                vid = video['marketPlaceID']
                 videolst.append({
                     'id': video['marketPlaceID'],
                     'url': video['url'],
@@ -94,25 +96,28 @@ class AmazonStoreIE(InfoExtractor):
                         'url': colorimg['hiRes'],
                     })
         formats = []
-        video_url = videolst[0]['url']
-        if url_or_none(video_url):
-            formats.append({
-                'url': video_url,
-                'ext': 'mp4',
-                'format_id': 'http-mp4',
-            })
-        else:
+        if not videolst:
+            print("list is null")
             formats.append({
                 'url': 'http://bo.vutn.net/no-video.mp4',
                 'ext': 'mp4',
                 'format_id': 'http-mp4',
             })
+        else:
+            print("list not null")
+            formats.append({
+                'url': videolst[0]['url'],
+                'ext': 'mp4',
+                'format_id': 'http-mp4',
+            })
+
+            
         # print(imagelst)
         if not formats:
             self.raise_no_formats('No video found for this customer review', expected=True)
         return {
-            'id': videolst[0]['id'],
-            'title': videolst[0]['title'],
+            'id': vid,
+            'title': title,
             'thumbnails': imagelst,
             'formats': formats,
         }
