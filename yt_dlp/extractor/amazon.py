@@ -93,7 +93,7 @@ class AmazonStoreIE(InfoExtractor):
                     imagelst.append({
                         'url': colorimg['hiRes'],
                     })
-        formats, subtitles = [], {}
+        formats = []
         video_url = videolst[0]['url']
         if url_or_none(video_url):
             formats.append({
