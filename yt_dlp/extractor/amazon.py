@@ -89,7 +89,7 @@ class AmazonStoreIE(InfoExtractor):
         for i in (jsonImage or {}):
             for colorimg in jsonImage[i]:
                 if colorimg.get('hiRes'):
-                    print(colorimg['hiRes'])
+                    # print(colorimg['hiRes'])
                     imagelst.append({
                         'url': colorimg['hiRes'],
                     })
@@ -107,7 +107,7 @@ class AmazonStoreIE(InfoExtractor):
                 'ext': 'mp4',
                 'format_id': 'http-mp4',
             })
-        print(imagelst)
+        # print(imagelst)
         if not formats:
             self.raise_no_formats('No video found for this customer review', expected=True)
         return {
