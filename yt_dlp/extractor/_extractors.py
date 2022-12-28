@@ -1426,6 +1426,8 @@ from .pokergo import (
 from .polsatgo import PolsatGoIE
 from .polskieradio import (
     PolskieRadioIE,
+    PolskieRadioLegacyIE,
+    PolskieRadioAuditionIE,
     PolskieRadioCategoryIE,
     PolskieRadioPlayerIE,
     PolskieRadioPodcastIE,
