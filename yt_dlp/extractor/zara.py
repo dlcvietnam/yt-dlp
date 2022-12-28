@@ -1,16 +1,8 @@
-import re
-
 from .common import InfoExtractor
 from ..utils import (
     ExtractorError,
-    clean_html,
-    float_or_none,
-    get_element_by_attribute,
-    get_element_by_class,
     int_or_none,
     js_to_json,
-    traverse_obj,
-    url_or_none,
 )
 
 
