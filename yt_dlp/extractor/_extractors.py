@@ -848,6 +848,7 @@ from .jwplatform import JWPlatformIE
 from .kakao import KakaoIE
 from .kaltura import KalturaIE
 from .kanal2 import Kanal2IE
+from .kankanews import KankaNewsIE
 from .karaoketv import KaraoketvIE
 from .karrierevideos import KarriereVideosIE
 from .keezmovies import KeezMoviesIE
@@ -856,6 +857,10 @@ from .ketnet import KetnetIE
 from .khanacademy import (
     KhanAcademyIE,
     KhanAcademyUnitIE,
+)
+from .kick import (
+    KickIE,
+    KickVODIE,
 )
 from .kicker import KickerIE
 from .kickstarter import KickStarterIE
@@ -1176,6 +1181,7 @@ from .neteasemusic import (
 from .netverse import (
     NetverseIE,
     NetversePlaylistIE,
+    NetverseSearchIE,
 )
 from .newgrounds import (
     NewgroundsIE,
@@ -1718,6 +1724,7 @@ from .soundcloud import (
     SoundcloudSetIE,
     SoundcloudRelatedIE,
     SoundcloudUserIE,
+    SoundcloudUserPermalinkIE,
     SoundcloudTrackStationIE,
     SoundcloudPlaylistIE,
     SoundcloudSearchIE,
@@ -2112,6 +2119,13 @@ from .videocampus_sachsen import (
 )
 from .videodetective import VideoDetectiveIE
 from .videofyme import VideofyMeIE
+from .videoken import (
+    VideoKenIE,
+    VideoKenPlayerIE,
+    VideoKenPlaylistIE,
+    VideoKenCategoryIE,
+    VideoKenTopicIE,
+)
 from .videomore import (
     VideomoreIE,
     VideomoreVideoIE,
