@@ -2198,6 +2198,7 @@ from .voicy import (
     VoicyIE,
     VoicyChannelIE,
 )
+from .volejtv import VolejTVIE
 from .voot import (
     VootIE,
     VootSeriesIE,
