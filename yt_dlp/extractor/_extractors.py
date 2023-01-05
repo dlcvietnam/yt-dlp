@@ -93,6 +93,7 @@ from .agora import (
 )
 from .airmozilla import AirMozillaIE
 from .airtv import AirTVIE
+from .aitube import AitubeKZVideoIE
 from .aljazeera import AlJazeeraIE
 from .alphaporno import AlphaPornoIE
 from .amara import AmaraIE
