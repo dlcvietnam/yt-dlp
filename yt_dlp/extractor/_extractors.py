@@ -35,7 +35,8 @@ from .youtube import (  # Youtube is moved to the top to improve performance
     YoutubeYtBeIE,
     YoutubeYtUserIE,
     YoutubeWatchLaterIE,
-    YoutubeShortsAudioPivotIE
+    YoutubeShortsAudioPivotIE,
+    YoutubeConsentRedirectIE,
 )
 
 from .abc import (
@@ -2060,6 +2061,10 @@ from .twitter import (
     TwitterBroadcastIE,
     TwitterSpacesIE,
     TwitterShortenerIE,
+)
+from .txxx import (
+    TxxxIE,
+    PornTopIE,
 )
 from .udemy import (
     UdemyIE,
