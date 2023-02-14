@@ -1211,6 +1211,8 @@ from .nfhsnetwork import NFHSNetworkIE
 from .nfl import (
     NFLIE,
     NFLArticleIE,
+    NFLPlusEpisodeIE,
+    NFLPlusReplayIE,
 )
 from .nhk import (
     NhkVodIE,
