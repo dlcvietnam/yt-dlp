@@ -524,7 +524,6 @@ from .dw import (
 )
 from .eagleplatform import EaglePlatformIE, ClipYouEmbedIE
 from .ebaumsworld import EbaumsWorldIE
-from .ebay import EbayIE
 from .echomsk import EchoMskIE
 from .egghead import (
     EggheadCourseIE,
