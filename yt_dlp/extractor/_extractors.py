@@ -1,4 +1,18 @@
 # flake8: noqa: F401
+from .taobao import (
+    TmallIE,
+    TaobaoIE,
+    TaobaoWorldIE,
+    Ali1688IE,
+)
+
+from .ebay import (
+    EbayItemIE,
+)
+
+from .zara import (
+    ZaraItemIE,
+)
 
 from .youtube import (  # Youtube is moved to the top to improve performance
     YoutubeIE,

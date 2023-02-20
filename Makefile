@@ -7,7 +7,7 @@ ot: offlinetest
 tar: yt-dlp.tar.gz
 
 # Keep this list in sync with MANIFEST.in
-# intended use: when building a source distribution,
+# intended use: when building a sour    ce distribution,
 # make pypi-files && python setup.py sdist
 pypi-files: AUTHORS Changelog.md LICENSE README.md README.txt supportedsites \
 	        completions yt-dlp.1 requirements.txt setup.cfg devscripts/* test/*
