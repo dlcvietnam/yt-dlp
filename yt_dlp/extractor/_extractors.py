@@ -95,12 +95,20 @@ from .airmozilla import AirMozillaIE
 from .airtv import AirTVIE
 from .aitube import AitubeKZVideoIE
 from .aljazeera import AlJazeeraIE
+from .allstar import (
+    AllstarIE,
+    AllstarProfileIE,
+)
 from .alphaporno import AlphaPornoIE
-from .amara import AmaraIE
+from .altcensored import (
+    AltCensoredIE,
+    AltCensoredChannelIE,
+)
 from .alura import (
     AluraIE,
     AluraCourseIE
 )
+from .amara import AmaraIE
 from .amcnetworks import AMCNetworksIE
 from .amazon import (
     AmazonStoreIE,
@@ -226,6 +234,8 @@ from .bilibili import (
     BiliBiliBangumiIE,
     BiliBiliBangumiSeasonIE,
     BiliBiliBangumiMediaIE,
+    BilibiliCheeseIE,
+    BilibiliCheeseSeasonIE,
     BiliBiliSearchIE,
     BilibiliCategoryIE,
     BilibiliAudioIE,
@@ -555,6 +565,7 @@ from .dropout import (
     DropoutSeasonIE,
     DropoutIE
 )
+from .duoplay import DuoplayIE
 from .dw import (
     DWIE,
     DWArticleIE,
@@ -578,6 +589,7 @@ from .ellentube import (
 )
 from .elonet import ElonetIE
 from .elpais import ElPaisIE
+from .eltrecetv import ElTreceTVIE
 from .embedly import EmbedlyIE
 from .engadget import EngadgetIE
 from .epicon import (
@@ -906,6 +918,10 @@ from .japandiet import (
     SangiinIE,
 )
 from .jeuxvideo import JeuxVideoIE
+from .jiosaavn import (
+    JioSaavnSongIE,
+    JioSaavnAlbumIE,
+)
 from .jove import JoveIE
 from .joj import JojIE
 from .jstream import JStreamIE
@@ -1244,6 +1260,7 @@ from .ndr import (
 from .ndtv import NDTVIE
 from .nebula import (
     NebulaIE,
+    NebulaClassIE,
     NebulaSubscriptionsIE,
     NebulaChannelIE,
 )
@@ -1333,7 +1350,6 @@ from .ninegag import NineGagIE
 from .ninenow import NineNowIE
 from .nintendo import NintendoIE
 from .nitter import NitterIE
-from .njpwworld import NJPWWorldIE
 from .nobelprize import NobelPrizeIE
 from .noice import NoicePodcastIE
 from .nonktube import NonkTubeIE
@@ -2033,6 +2049,10 @@ from .tenplay import (
 from .testurl import TestURLIE
 from .tf1 import TF1IE
 from .tfo import TFOIE
+from .theguardian import (
+    TheGuardianPodcastIE,
+    TheGuardianPodcastPlaylistIE,
+)
 from .theholetv import TheHoleTvIE
 from .theintercept import TheInterceptIE
 from .theplatform import (
@@ -2305,6 +2325,7 @@ from .vidio import (
     VidioLiveIE
 )
 from .vidlii import VidLiiIE
+from .vidly import VidlyIE
 from .viewlift import (
     ViewLiftIE,
     ViewLiftEmbedIE,
@@ -2597,6 +2618,9 @@ from .zingmp3 import (
     ZingMp3ChartMusicVideoIE,
     ZingMp3UserIE,
     ZingMp3HubIE,
+    ZingMp3LiveRadioIE,
+    ZingMp3PodcastEpisodeIE,
+    ZingMp3PodcastIE,
 )
 from .zoom import ZoomIE
 from .zype import ZypeIE
