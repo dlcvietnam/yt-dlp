@@ -568,12 +568,12 @@ class FacebookIE(InfoExtractor):
                     q = qualities(['sd', 'hd'])
                     for key, format_id in (('playable_url', 'sd'), ('playable_url_quality_hd', 'hd'),
                                            ('playable_url_dash', ''), ('browser_native_hd_url', 'hd'),
-                                           ('browser_native_sd_url', 'sd')):
+                                           ('browser_native_sd_url', 'sd'), ('dash_manifest_url', '')):
                         playable_url = video.get(key)
                         if not playable_url:
                             continue
                         if determine_ext(playable_url) == 'mpd':
-                            formats.extend(self._extract_mpd_formats(playable_url, video_id))
+                            formats.extend(self._extract_mpd_formats(playable_url, video_id,headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/117.0'}))
                         else:
                             formats.append({
                                 'format_id': format_id,
