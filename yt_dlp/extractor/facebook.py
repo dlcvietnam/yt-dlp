@@ -573,7 +573,7 @@ class FacebookIE(InfoExtractor):
                         if not playable_url:
                             continue
                         if determine_ext(playable_url) == 'mpd':
-                            formats.extend(self._extract_mpd_formats(playable_url, video_id,headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/117.0'}))
+                            formats.extend(self._extract_mpd_formats(playable_url, video_id, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/117.0'}))
                         else:
                             formats.append({
                                 'format_id': format_id,
